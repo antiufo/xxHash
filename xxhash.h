@@ -67,6 +67,8 @@ XXH32        6.8 GB/s            6.0 GB/s
 #ifndef XXHASH_H_5627135585666179
 #define XXHASH_H_5627135585666179 1
 
+#define DLLEXPORT /*extern "C"*/ __declspec(dllexport)
+
 #if defined (__cplusplus)
 extern "C" {
 #endif
@@ -106,7 +108,7 @@ typedef enum { XXH_OK=0, XXH_ERROR } XXH_errorcode;
 #    define XXH_PUBLIC_API static
 #  endif
 #else
-#  define XXH_PUBLIC_API   /* do nothing */
+#  define XXH_PUBLIC_API DLLEXPORT  /* do nothing */
 #endif /* XXH_PRIVATE_API */
 
 /*!XXH_NAMESPACE, aka Namespace Emulation :
